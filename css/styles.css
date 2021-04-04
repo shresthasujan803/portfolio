@@ -191,6 +191,16 @@ canvas {
     color: teal;
 }
 
+.web-project-list .list {
+    width: 300px;
+    margin: 30px auto 0px auto;
+}
+
+.web-project-list ul {
+    text-align: left;
+    list-style: inside;
+}
+
 /**************bottom container*********************/
 
 .bottom-container {

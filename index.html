@@ -21,100 +21,7 @@
 
     <!-- custom css style -->
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript">
-        var canvas = null;				// reference to main page canvas
-        var context = null;				// on-screen canvas context
-        var bufferCanvas = null;		// off-screen canvas
-        var bufferCanvasCtx = null;		// off-screen canvas context
-        var flakeArray = [];			// array to hold snowflakes
-        var flakeTimer = null;			// timer for adding new flakes
-        var maxFlakes = 200;			// max # of flakes on screen
 
-        function Flake() {
-            this.x = Math.round(Math.random() * context.canvas.width);
-            this.y = -10;
-            this.drift = Math.random();
-            this.speed = Math.round(Math.random() * 3) + 1;
-            this.width = (Math.random() * 3) + 2;
-            this.height = this.width;
-        }
-
-        function init() {
-            // Get the canvas and a reference to the drawing context
-            canvas = document.getElementById('testCanvas');
-            context = canvas.getContext("2d");
-
-            // Build the off-screen canvas and get its context
-            bufferCanvas = document.createElement("canvas");
-            bufferCanvasCtx = bufferCanvas.getContext("2d");
-            bufferCanvasCtx.canvas.width = context.canvas.width;
-            bufferCanvasCtx.canvas.height = context.canvas.height;
-
-            // create a clipping region
-            // bufferCanvasCtx.beginPath();
-            // bufferCanvasCtx.fillStyle = "black";
-            // bufferCanvasCtx.fillRect(0, 0, bufferCanvas.width, bufferCanvas.height);
-            // bufferCanvasCtx.arc(bufferCanvas.width / 2, bufferCanvas.height / 2, bufferCanvas.height / 2, 0, 2 * Math.PI);
-            // bufferCanvasCtx.clip();
-
-            // initialize the flake objects
-            flakeTimer = setInterval(addFlake, 200);
-
-            // draw the initial canvas state
-            draw();
-
-            requestAnimationFrame(animate);
-        }
-
-        function addFlake() {
-            flakeArray[flakeArray.length] = new Flake();
-            if (flakeArray.length == maxFlakes) {
-                clearInterval(flakeTimer);
-            }
-        }
-
-        function blank() {
-            bufferCanvasCtx.fillStyle = "#1c1427";
-            bufferCanvasCtx.fillRect(0, 0, bufferCanvasCtx.canvas.width, bufferCanvasCtx.canvas.height);
-        }
-
-        function animate() {
-            blank();
-            update();
-            draw();
-            requestAnimationFrame(animate);
-        }
-
-        function update() {
-            for (var i = 0; i < flakeArray.length; i++) {
-                if (flakeArray[i].y < context.canvas.height) {
-                    flakeArray[i].y += flakeArray[i].speed;
-                    if (flakeArray[i].y > context.canvas.height)
-                        flakeArray[i].y = -5;
-                    flakeArray[i].x += flakeArray[i].drift;
-                    if (flakeArray[i].x > context.canvas.width)
-                        flakeArray[i].x = 0;
-                }
-            }
-        }
-
-        function draw() {
-            context.save();
-
-            // draw each one of the updated snowflakes
-            for (var i = 0; i < flakeArray.length; i++) {
-                bufferCanvasCtx.fillStyle = "white";
-                bufferCanvasCtx.fillRect(flakeArray[i].x, flakeArray[i].y, flakeArray[i].width, flakeArray[i].height);
-            }
-
-            // copy the entire rendered image from the buffer canvas to the visible one
-            context.drawImage(bufferCanvas, 0, 0, bufferCanvas.width, bufferCanvas.height);
-
-            context.restore();
-        }
-
-        window.addEventListener("load", init)
-    </script>
 </head>
 
 
@@ -153,10 +60,14 @@
         <section class="about">
             <div class="about-box">
                 <h2>ABOUT ME</h2>
-                <p>I am a software developer who focuses on writing clean, elegant and efficient code. <br><br>
+                <p>I am a Junior web and flutter developer who focuses on writing clean, elegant and efficient code.
+                    <br><br>
+
                     I have developed a fully functional ecommerce mobile app named as Haatbazaar. I designed it using
                     Flutter, dart and firebase. I have also developed web app which are
-                    implemented frontend by React & Redux and built backend using Node & MongoDB.</p>
+                    implemented frontend by React & Redux and built backend using Node & MongoDB.<br><br> I am looking
+                    for a
+                    summer internship in 2021 where i can improve myself and add value to the company i work for.</p>
                 <a class="btn" href="cv-file/CV-shresthasujan803.pdf" target="_blank" download><i
                         class="fas fa-download"></i>&nbsp;Download
                     Resume</a>
@@ -204,7 +115,7 @@
                     developement process.
                 </p>
                 <div>
-                    <p>SKILL SET FOR WEB DEVELOPMENT</p>
+                    <p>BASIC SKILL SET FOR WEB DEVELOPMENT</p>
                     <ul>
                         <li>HTML5</li>
                         <li>CSS3</li>
@@ -314,7 +225,7 @@
 
     <footer class="bottom-container">
         <h1 class="top-heading">Get In Touch</h1>
-        <h3>"Feel free to contact me if you are interested in hiring me." </h3>
+        <h3>"Feel free to contact me if you are interested in hiring me as a intern." </h3>
         <a class="footer-link" href="mailto:shresthasujan845@gmail.com" target="_blanck">shresthasujan845@gmail.com</a>
 
         <a class="footer-link" href="https://www.linkedin.com/in/shresthasujan803" target="_blanck">LinkedIn</a>
@@ -327,6 +238,100 @@
 
 
     </footer>
+    <script type="text/javascript">
+        var canvas = null;				// reference to main page canvas
+        var context = null;				// on-screen canvas context
+        var bufferCanvas = null;		// off-screen canvas
+        var bufferCanvasCtx = null;		// off-screen canvas context
+        var flakeArray = [];			// array to hold snowflakes
+        var flakeTimer = null;			// timer for adding new flakes
+        var maxFlakes = 200;			// max # of flakes on screen
+
+        function Flake() {
+            this.x = Math.round(Math.random() * context.canvas.width);
+            this.y = -10;
+            this.drift = Math.random();
+            this.speed = Math.round(Math.random() * 3) + 1;
+            this.width = (Math.random() * 3) + 2;
+            this.height = this.width;
+        }
+
+        function init() {
+            // Get the canvas and a reference to the drawing context
+            canvas = document.getElementById('testCanvas');
+            context = canvas.getContext("2d");
+
+            // Build the off-screen canvas and get its context
+            bufferCanvas = document.createElement("canvas");
+            bufferCanvasCtx = bufferCanvas.getContext("2d");
+            bufferCanvasCtx.canvas.width = context.canvas.width;
+            bufferCanvasCtx.canvas.height = context.canvas.height;
+
+            // create a clipping region
+            // bufferCanvasCtx.beginPath();
+            // bufferCanvasCtx.fillStyle = "black";
+            // bufferCanvasCtx.fillRect(0, 0, bufferCanvas.width, bufferCanvas.height);
+            // bufferCanvasCtx.arc(bufferCanvas.width / 2, bufferCanvas.height / 2, bufferCanvas.height / 2, 0, 2 * Math.PI);
+            // bufferCanvasCtx.clip();
+
+            // initialize the flake objects
+            flakeTimer = setInterval(addFlake, 200);
+
+            // draw the initial canvas state
+            draw();
+
+            requestAnimationFrame(animate);
+        }
+
+        function addFlake() {
+            flakeArray[flakeArray.length] = new Flake();
+            if (flakeArray.length == maxFlakes) {
+                clearInterval(flakeTimer);
+            }
+        }
+
+        function blank() {
+            bufferCanvasCtx.fillStyle = "#1c1427";
+            bufferCanvasCtx.fillRect(0, 0, bufferCanvasCtx.canvas.width, bufferCanvasCtx.canvas.height);
+        }
+
+        function animate() {
+            blank();
+            update();
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        function update() {
+            for (var i = 0; i < flakeArray.length; i++) {
+                if (flakeArray[i].y < context.canvas.height) {
+                    flakeArray[i].y += flakeArray[i].speed;
+                    if (flakeArray[i].y > context.canvas.height)
+                        flakeArray[i].y = -5;
+                    flakeArray[i].x += flakeArray[i].drift;
+                    if (flakeArray[i].x > context.canvas.width)
+                        flakeArray[i].x = 0;
+                }
+            }
+        }
+
+        function draw() {
+            context.save();
+
+            // draw each one of the updated snowflakes
+            for (var i = 0; i < flakeArray.length; i++) {
+                bufferCanvasCtx.fillStyle = "white";
+                bufferCanvasCtx.fillRect(flakeArray[i].x, flakeArray[i].y, flakeArray[i].width, flakeArray[i].height);
+            }
+
+            // copy the entire rendered image from the buffer canvas to the visible one
+            context.drawImage(bufferCanvas, 0, 0, bufferCanvas.width, bufferCanvas.height);
+
+            context.restore();
+        }
+
+        window.addEventListener("load", init)
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

@@ -196,6 +196,14 @@ canvas {
     margin: 30px auto 0px auto;
 }
 
+@media screen and (max-width:480px){
+.web-project-list .list {
+    width: 300px;
+    font-size:12px;
+ 
+}
+
+}
 .web-project-list ul {
     text-align: left;
     list-style: inside;

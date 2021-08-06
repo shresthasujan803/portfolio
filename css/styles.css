@@ -3,84 +3,86 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Sacramento', cursive; */
 
 html {
-    box-sizing: border-box;
-    -ms-overflow-style: none;
-    /* Internet Explorer 10+ */
-    scrollbar-width: none;
-    /* Firefox */
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 html::-webkit-scrollbar {
-    display: none;
-    /* Safari and Chrome */
+  display: none;
+  /* Safari and Chrome */
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    text-align: center;
-    /*only apply to those container having 100% width*/
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  text-align: center;
+  /*only apply to those container having 100% width*/
+  font-family: "Montserrat", sans-serif;
 }
 
 .top-heading {
-    font-family: 'Caveat', cursive;
-    font-weight: 400;
-    margin: 0;
-    color: #66bfbf;
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  margin: 0;
+  color: #66bfbf;
 }
 
 h1 {
-    font-size: 100px;
-    line-height: 1;
+  font-size: 100px;
+  line-height: 1;
 }
 
 h2 {
-    margin: 0;
-    font-size: 45px;
+  margin: 0;
+  font-size: 45px;
 }
 
 hr {
-    border-style: none;
-    border-top-style: dotted;
-    border-width: 5px;
-    width: 100%;
-    border-color: grey;
+  border-style: none;
+  border-top-style: dotted;
+  border-width: 5px;
+  width: 100%;
+  border-color: grey;
 }
 
 /**************top container*********************/
 
 .top-container {
-    position: relative;
+  position: relative;
 }
 
 .top-container #content {
-    background-color: #1c1427;
-    height: 100vh;
-    width: 100%;
+  background-color: #1c1427;
+  height: 100vh;
+  width: 100%;
 }
 
 .top-container .profile {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .profile img {
-    width: 40%;
+  width: 40%;
 }
 
 canvas {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 
 .middle-container {
-    background: #F7FFF7;
+  background: #f7fff7;
 }
 
 /* .middle-container a {
@@ -88,78 +90,83 @@ canvas {
 } */
 
 .middle-container .btn {
-    color: #F7FFF7;
-    background: #1c1427;
-    text-decoration: none;
-    padding: 8px;
-    border-radius: 4px;
-    /*inline element doesnot get vertical padding and margin so we need to convert it into inline-block*/
-    display: inline-block;
+  color: #f7fff7;
+  background: #1c1427;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+  /*inline element doesnot get vertical padding and margin so we need to convert it into inline-block*/
+  display: inline-block;
 }
 
 .middle-container .btn:hover {
-    background: #242424;
+  background: #242424;
 }
 
 /**************middle container*********************/
 
 .middle-container .about {
-    background-color: #2F3061;
+  background-color: #2f3061;
 }
 
 .about-box {
-    color: white;
-    width: 70%;
-    margin: 0 auto;
-    padding: 70px;
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+  padding: 70px;
+}
+#testimonials img {
+  height: 450px;
+  width: 250px;
 }
 
-@media screen and (max-width:780px) {
-    .about-box {
-        width: 90%;
-    }
-    .about-box p {
-        font-size: 14px;
-    }
+@media screen and (max-width: 780px) {
+  .about-box {
+    width: 100%;
+    padding: 20px;
+  }
+  .about-box p {
+    font-size: 14px;
+  }
 }
 
 .about-box p {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .middle-container .skills h2 {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .middle-container .skills .skill-row {
-    width: 70%;
-    margin: 50px auto 150px auto;
-    text-align: left;
+  width: 70%;
+  margin: 50px auto 150px auto;
+  text-align: left;
 }
 
 .middle-container .skills .bottom {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .mobile-icon {
-    margin-right: 30px;
-    float: left;
+  margin-right: 30px;
+  float: left;
 }
 
 .web-icon {
-    width: 25%;
-    margin-left: 30px;
-    float: right;
+  width: 25%;
+  margin-left: 30px;
+  float: right;
 }
 
 .middle-container .contact-me {
-    margin: 50px auto;
-    width: 50%;
+  margin: 50px auto;
+  width: 50%;
 }
 
 .middle-container .contact-me p {
-    width: 80%;
-    margin: 25px auto;
+  width: 80%;
+  margin: 25px auto;
 }
 
 /* testimonial */
@@ -167,64 +174,62 @@ canvas {
 /*testimonials section*/
 
 #testimonials {
-    background-color: #ef8172;
+  background-color: #ef8172;
 }
 
 .testimonial-text {
-    font-size: 2.5rem;
-    line-height: 1.5;
+  font-size: 2.5rem;
+  line-height: 1.5;
 }
 
 .testimonials-image {
-    width: 20%;
-    border-radius: 5%;
-    margin: 15px;
+  width: 20%;
+  border-radius: 5%;
+  margin: 15px;
 }
 
 .web-project {
-    width: 70%;
-    margin: 0 auto;
-    padding: 50px 0;
+  width: 70%;
+  margin: 0 auto;
+  padding: 50px 0;
 }
 
 .web-project a {
-    color: teal;
+  color: teal;
 }
 
 .web-project-list .list {
-    width: 400px;
-    margin: 30px auto 0px auto;
+  width: 400px;
+  margin: 30px auto 0px auto;
 }
 
-@media screen and (max-width:480px){
-.web-project-list .list {
+@media screen and (max-width: 480px) {
+  .web-project-list .list {
     width: 300px;
-    font-size:12px;
- 
-}
-
+    font-size: 12px;
+  }
 }
 .web-project-list ul {
-    text-align: left;
-    list-style: inside;
+  text-align: left;
+  list-style: inside;
 }
 
 /**************bottom container*********************/
 
 .bottom-container {
-    background-color: #343434;
-    padding: 50px 0 20px;
-    color: white;
+  background-color: #343434;
+  padding: 50px 0 20px;
+  color: white;
 }
 
 .bottom-container .footer-link {
-    color: #FFE660;
-    text-decoration: none;
-    margin-right: 25px;
-    font-family: 'Montserrat', sans-serif;
+  color: #ffe660;
+  text-decoration: none;
+  margin-right: 25px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .bottom-container .footer-link:hover {
-    color: #FFE660;
-    font-weight: bold;
+  color: #ffe660;
+  font-weight: bold;
 }
